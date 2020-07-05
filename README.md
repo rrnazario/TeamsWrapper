@@ -7,7 +7,7 @@ A wrapper to help you send a message to a Microsoft Teams Channel.
 
 ![image](./Images/Connectors.png)
 
-![image](./Images/Webhook.bmp)
+![image](./Images/WebHook.bmp)
 
 ![image](./Images/Configure.bmp)
 
