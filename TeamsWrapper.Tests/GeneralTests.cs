@@ -15,7 +15,7 @@ namespace TeamsWrapper.Tests
             const string UrlTeamsChannel = "UrlTeamsChannel";
             const string Term = "Microsoft Teams";
 
-            Environment.SetEnvironmentVariable(UrlTeamsChannel, "PUT THE CHANNEL URL HERE");
+            Environment.SetEnvironmentVariable(UrlTeamsChannel, "https://outlook.office.com/webhook/SAMPLE@SAMPLE/IncomingWebhook/SAMPLE/SAMPLE");
 
             var teams = new TeamsMessage()
             {
