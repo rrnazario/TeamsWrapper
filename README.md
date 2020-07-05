@@ -13,7 +13,7 @@ A wrapper to help you send a message to a Microsoft Teams Channel.
 ---
 ![image](./Images/copyUrl.bmp)
 ---
-- Get the channel URL and fill the environment variable "UrlTeamsChannel";
+- Get the channel URL and, at TeamsWrapper.Tests project, fill the environment variable "UrlTeamsChannel";
 
 - Done. You can now send a message to the channel via this wrapper!
 
