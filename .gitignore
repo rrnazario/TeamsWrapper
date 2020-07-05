@@ -1,0 +1,9 @@
+﻿################################################################################
+# This .gitignore file was automatically created by Microsoft(R) Visual Studio.
+################################################################################
+
+/.vs
+/TeamsWrapper/bin/Debug/netcoreapp3.1
+/TeamsWrapper/obj
+/TeamsWrapper.Tests/bin/Debug/netcoreapp3.1
+/TeamsWrapper.Tests/obj

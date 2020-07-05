@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30204.135
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TeamsWrapper", "TeamsWrapper\TeamsWrapper.csproj", "{23743A9D-C1CE-4064-99CD-340BD439D183}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TeamsWrapper.Tests", "TeamsWrapper.Tests\TeamsWrapper.Tests.csproj", "{BC85EC5B-F1BB-400F-836A-8368BEE8FF21}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{23743A9D-C1CE-4064-99CD-340BD439D183}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{23743A9D-C1CE-4064-99CD-340BD439D183}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{23743A9D-C1CE-4064-99CD-340BD439D183}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{23743A9D-C1CE-4064-99CD-340BD439D183}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BC85EC5B-F1BB-400F-836A-8368BEE8FF21}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BC85EC5B-F1BB-400F-836A-8368BEE8FF21}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BC85EC5B-F1BB-400F-836A-8368BEE8FF21}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BC85EC5B-F1BB-400F-836A-8368BEE8FF21}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {0D5DE24B-2C7D-491D-BD1E-90A32E02A94C}
+	EndGlobalSection
+EndGlobal
