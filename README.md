@@ -6,13 +6,13 @@ A wrapper to help you send a message to a Microsoft Teams Channel.
 - Go to your Microsoft Teams Channel, click on "Connectors" and configure an "Income Webwook";
 
 ![image](./Images/Connectors.png)
-
+---
 ![image](./Images/WebHook.bmp)
-
+---
 ![image](./Images/Configure.bmp)
-
+---
 ![image](./Images/copyUrl.bmp)
-
+---
 - Get the channel URL and fill the environment variable "UrlTeamsChannel";
 
 - Done. You can now send a message to the channel via this wrapper!
