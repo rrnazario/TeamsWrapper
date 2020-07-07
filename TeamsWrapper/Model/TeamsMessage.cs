@@ -19,7 +19,17 @@ namespace TeamsWrapper.Model
 
         private readonly HttpClient _client = new HttpClient();
 
-        public override string ToString() => JsonConvert.SerializeObject(this, Formatting.Indented, new JsonSerializerSettings { NullValueHandling = NullValueHandling.Ignore }).Replace("context", "@context").Replace("type", "@type");
+        public override string ToString()
+        {
+            var termsPutAt = new string[] { "context", "type" };
+
+            var result = JsonConvert.SerializeObject(this, Formatting.Indented, new JsonSerializerSettings { NullValueHandling = NullValueHandling.Ignore });
+
+            foreach (var item in termsPutAt)            
+                result = result.Replace(item, $"@{item}");
+
+            return result;
+        }
 
         public async Task SendNotificationAsync() => await _client.PostAsync(TeamsMessageConstants.UrlTeamsChannel, new StringContent(ToString()));
     }
