@@ -2,6 +2,7 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
 using System.Threading.Tasks;
 using TeamsWrapper.Constants;
+using TeamsWrapper.Extensions;
 using TeamsWrapper.Model;
 
 namespace TeamsWrapper.Tests
@@ -9,15 +10,16 @@ namespace TeamsWrapper.Tests
     [TestClass]
     public class GeneralTests
     {
+        const string UrlTeamsChannel = "UrlTeamsChannel";
+        const string Term = "Microsoft Teams";
+
         [TestMethod]
         public async Task SendTeamsAlert()
-        {
-            const string UrlTeamsChannel = "UrlTeamsChannel";
-            const string Term = "Microsoft Teams";
-
+        {            
+            //You can use either an environment variable or pass it on TeamMessage constructor.
             Environment.SetEnvironmentVariable(UrlTeamsChannel, "https://outlook.office.com/webhook/SAMPLE@SAMPLE/IncomingWebhook/SAMPLE/SAMPLE");
 
-            var teams = new TeamsMessage()
+            var teams = new TeamsMessage(UrlTeamsChannel)
             {
                 title = $"Sample Title",
                 text = $"Sample Text",
@@ -38,6 +40,14 @@ namespace TeamsWrapper.Tests
                     }
                 }
             };
+
+            await teams.SendNotificationAsync();
+        }
+
+        [TestMethod]
+        public async Task SendTeamsAlertUsingExtensions()
+        {
+            var teams = new TeamsMessage(UrlTeamsChannel).AddLink("Search it on StackOverflow", $@"https://stackoverflow.com/search?q={Term.Replace(' ', '+')}");
 
             await teams.SendNotificationAsync();
         }

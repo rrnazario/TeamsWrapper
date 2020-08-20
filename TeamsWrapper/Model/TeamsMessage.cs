@@ -19,6 +19,24 @@ namespace TeamsWrapper.Model
 
         private readonly HttpClient _client = new HttpClient();
 
+        private string _urlTeamsChannel;
+        private string UrlTeamsChannel
+        {
+            get
+            {
+                return string.IsNullOrEmpty(TeamsMessageConstants.UrlTeamsChannel) ? _urlTeamsChannel : TeamsMessageConstants.UrlTeamsChannel;
+            }
+
+            set { }
+        }
+
+        public TeamsMessage() { }
+
+        public TeamsMessage(string urlTeamsChannel)
+        {
+            _urlTeamsChannel = urlTeamsChannel;
+        }
+
         public override string ToString()
         {
             var termsPutAt = new string[] { "context", "type" };
@@ -31,6 +49,6 @@ namespace TeamsWrapper.Model
             return result;
         }
 
-        public async Task SendNotificationAsync() => await _client.PostAsync(TeamsMessageConstants.UrlTeamsChannel, new StringContent(ToString()));
+        public async Task SendNotificationAsync() => await _client.PostAsync(UrlTeamsChannel, new StringContent(ToString()));
     }
 }
