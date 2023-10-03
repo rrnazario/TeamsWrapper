@@ -26,9 +26,8 @@ namespace TeamsWrapper.Extensions
                 name = text,
                 targets = new TeamsTarget[]
                         {
-                            new TeamsTarget()
+                            new()         
                             {
-                                os = "default",
                                 uri = url
                             }
                         }

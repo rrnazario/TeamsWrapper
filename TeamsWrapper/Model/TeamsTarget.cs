@@ -6,7 +6,7 @@ namespace TeamsWrapper.Model
 {
     public class TeamsTarget
     {
-        public string os { get; set; }
+        public string os { get; init; } = "default";
         public string uri { get; set; }
     }
 }

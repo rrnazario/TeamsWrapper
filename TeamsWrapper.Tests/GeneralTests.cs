@@ -16,7 +16,7 @@ namespace TeamsWrapper.Tests
 
         [TestMethod]
         public async Task SendTeamsAlert()
-        {            
+        {
             //You can use either an environment variable or pass it on TeamMessage constructor.
             Environment.SetEnvironmentVariable(UrlTeamsChannel, "https://outlook.office.com/webhook/SAMPLE@SAMPLE/IncomingWebhook/SAMPLE/SAMPLE");
 
@@ -32,10 +32,9 @@ namespace TeamsWrapper.Tests
                         name = "Search it on StackOverflow",
                         targets = new TeamsTarget[]
                         {
-                            new TeamsTarget()
+                            new TeamsTarget
                             {
-                                os = "default",
-                                uri = $@"https://stackoverflow.com/search?q={Term.Replace(' ', '+')}"
+                                uri = HttpUtility.UrlEncode($@"https://stackoverflow.com/search?q={Term}")
                             }
                         }
                     }
@@ -49,7 +48,7 @@ namespace TeamsWrapper.Tests
         public async Task SendTeamsAlertUsingExtensions()
         {
             var teams = new TeamsMessage(UrlTeamsChannel)
-                .AddLink("Search it on StackOverflow",HttpUtility.UrlEncode($@"https://stackoverflow.com/search?q={Term}"));
+                .AddLink("Search it on StackOverflow", HttpUtility.UrlEncode($@"https://stackoverflow.com/search?q={Term}"));
 
             await teams.SendNotificationAsync();
         }
