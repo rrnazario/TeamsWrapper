@@ -1,5 +1,5 @@
-# TeamsWrapper
-A wrapper to help you send a message to a Microsoft Teams Channel.
+# Teams Wrapper
+A wrapper to help you to send messages to a Microsoft Teams Channel.
 
 # To Use
 
