@@ -24,7 +24,7 @@ namespace TeamsWrapper.Model
         {
             get
             {
-                return string.IsNullOrEmpty(TeamsMessageConstants.UrlTeamsChannel) ? _urlTeamsChannel : TeamsMessageConstants.UrlTeamsChannel;
+                return string.IsNullOrEmpty(_urlTeamsChannel) ? TeamsMessageConstants.UrlTeamsChannel : _urlTeamsChannel;
             }
 
             set { }

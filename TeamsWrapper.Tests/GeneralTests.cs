@@ -1,6 +1,7 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
 using System.Threading.Tasks;
+using System.Web;
 using TeamsWrapper.Constants;
 using TeamsWrapper.Extensions;
 using TeamsWrapper.Model;
@@ -47,7 +48,8 @@ namespace TeamsWrapper.Tests
         [TestMethod]
         public async Task SendTeamsAlertUsingExtensions()
         {
-            var teams = new TeamsMessage(UrlTeamsChannel).AddLink("Search it on StackOverflow", $@"https://stackoverflow.com/search?q={Term.Replace(' ', '+')}");
+            var teams = new TeamsMessage(UrlTeamsChannel)
+                .AddLink("Search it on StackOverflow",HttpUtility.UrlEncode($@"https://stackoverflow.com/search?q={Term}"));
 
             await teams.SendNotificationAsync();
         }

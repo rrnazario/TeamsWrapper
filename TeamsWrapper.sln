@@ -1,11 +1,11 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 16
-VisualStudioVersion = 16.0.30204.135
+# Visual Studio Version 17
+VisualStudioVersion = 17.7.34031.279
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TeamsWrapper", "TeamsWrapper\TeamsWrapper.csproj", "{23743A9D-C1CE-4064-99CD-340BD439D183}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TeamsWrapper", "TeamsWrapper\TeamsWrapper.csproj", "{23743A9D-C1CE-4064-99CD-340BD439D183}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TeamsWrapper.Tests", "TeamsWrapper.Tests\TeamsWrapper.Tests.csproj", "{BC85EC5B-F1BB-400F-836A-8368BEE8FF21}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TeamsWrapper.Tests", "TeamsWrapper.Tests\TeamsWrapper.Tests.csproj", "{BC85EC5B-F1BB-400F-836A-8368BEE8FF21}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

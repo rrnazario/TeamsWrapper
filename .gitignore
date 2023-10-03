@@ -3,7 +3,7 @@
 ################################################################################
 
 /.vs
-/TeamsWrapper/bin/Debug/netcoreapp3.1
+/TeamsWrapper/bin
 /TeamsWrapper/obj
-/TeamsWrapper.Tests/bin/Debug/netcoreapp3.1
+/TeamsWrapper.Tests/bin
 /TeamsWrapper.Tests/obj
