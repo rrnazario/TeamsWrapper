@@ -1,12 +1,11 @@
 ﻿using Newtonsoft.Json;
-using System;
-using System.Collections.Generic;
 using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
 using TeamsWrapper.Constants;
+using TeamsWrapper.Model;
 
-namespace TeamsWrapper.Model
+namespace TeamsWrapper
 {
     public class TeamsMessage
     {
@@ -17,7 +16,7 @@ namespace TeamsWrapper.Model
         public string text { get; set; }
         public TeamsPotencialAction[] potentialAction { get; set; }
 
-        private readonly HttpClient _client = new HttpClient();
+        private readonly HttpClient _client;
 
         private string _urlTeamsChannel;
         private string UrlTeamsChannel
@@ -30,9 +29,19 @@ namespace TeamsWrapper.Model
             set { }
         }
 
-        public TeamsMessage() { }
+        [JsonConstructor]
+        public TeamsMessage()
+        {
+            _client = new HttpClient();
+        }
 
-        public TeamsMessage(string urlTeamsChannel)
+        public TeamsMessage(HttpClient httpClient)
+        {
+            _client = httpClient;
+        }
+
+        public TeamsMessage(string urlTeamsChannel) 
+            : this()
         {
             _urlTeamsChannel = urlTeamsChannel;
         }
@@ -43,7 +52,7 @@ namespace TeamsWrapper.Model
 
             var result = JsonConvert.SerializeObject(this, Formatting.Indented, new JsonSerializerSettings { NullValueHandling = NullValueHandling.Ignore });
 
-            foreach (var item in termsPutAt)            
+            foreach (var item in termsPutAt)
                 result = result.Replace(item, $"@{item}");
 
             return result;
